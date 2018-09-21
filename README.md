@@ -539,6 +539,7 @@ E....A..G..F.G.D,..A..G.F. <i>& this is the lead pattern for high noon</i>
     pattern_lib&gt;chorus_end
 }
 <b>---</b>
+
 </pre>
 
 #### example2.ka
@@ -564,6 +565,7 @@ c>E5...c>B5..c>B5.c>B5.c>B5.
 chorus^2^3
 c>E8.^4 c>B8.^4 c>C8.^4 c>D8.^4
 <b>---</b>
+
 </pre>
 
 #### exapmle3.ka
