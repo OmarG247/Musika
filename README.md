@@ -291,7 +291,7 @@ The simplest music section is a blank line:
 ---
 <i>...Pattern Section...</i>
 ---
-<i>& There is nothing here but a comment (no comment required)
+<i>& There is nothing here but a comment (no comment required)</i>
 ---
 
 </pre>
