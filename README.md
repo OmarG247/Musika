@@ -2,21 +2,21 @@
 
 ## Musika Features
 
-*   Import 0 or more Musika files to utilize their patterns/music in a file
 *   Add the following metadata to a song:
     *   song title
     *   song author(s)
     *   key signature
     *   time signature
-    *   base tempo
-    *   base octave
+    *   tempo
+    *   octave
+*   Change the metadata for a song in the middle of it to change aspects such as key, time, tempo, and octave
 *   Define patterns/riffs that can be used in songs (like functions in a program)
 *   Define chords that can modularize complex macro-notes (chords)
 *   Take a segment of music and have it repeat a number of times
 *   Layer music segments on top of each other
-*   Change the metadata for a song in the middle of it to change aspects such as key, time, tempo, and octave
-*   Write notes in the specified key, give them a length, and keep the octave at the base or shift it one higher or lower
+*   Write notes in the specified key, give them a length, and keep the octave at the base or shift it higher or lower
 *   Write comments in the code to make developer/composer notes
+*   Import 0 or more Musika files to utilize their patterns/music in a file
 
 ## How to program in Musika
 
@@ -39,7 +39,7 @@ The following is an example of an accompaniment (another Musika file):
 <b>accompany</b> [musika_file] <b>name</b> new_accompaniment
 </pre>
 
-You specify a Musika file within your directory (or as a part of the Musika library) solely by the name (NO FILE EXTENSION)
+You specify a Musika file within your directory (or as a part of the Musika library) solely by the name and/or relative path (NO FILE EXTENSION)
 
 This statement will import the specified Musika file and it can be referenced later in the file using the name specified after the **name** keyword.
 
@@ -57,7 +57,7 @@ Each accompaniment specification must be specified on its own line. After that, 
 <b>title</b>: "Song Title"
 <b>author</b>: "Song Author"
 <b>coauthors</b>: "Song coauthors"
-<b>key</b>: Cmaj
+<b>key</b>: Cmaj                       <i>& The info section is here</i>
 <b>time</b>: 4 / 4
 <b>tempo</b>: 4 = 60
 <b>octave</b>: 4
@@ -84,7 +84,7 @@ Or by a reference from an accompaniment:
 Who wrote the song/piece.
 This is specified by either a literal string:
 <pre>
-<b>author</b>: "Song Title"
+<b>author</b>: "Song Author"
 </pre>
 Or by a reference from an accompaniment:
 <pre>
@@ -133,25 +133,25 @@ This is specified literally:
     <pre>
     <b>time</b>: 6 / 8
     </pre>
-This is using _common_ (4/4) or _cut_ (2/2) as a shorthand:
+Using _common_ (4/4) or _cut_ (2/2) as a shorthand:
     <pre>
     <b>time</b>: <i>common</i>
     </pre>
 Or by a reference from an accompaniment:
     <pre>
-    <b>key</b>: accompaniment_ref_Name
+    <b>time</b>: accompaniment_ref_Name
     </pre>
-    If specified literally, the first number specifies the beats per measure and the second number is the base beat. So 6 / 8 means that there are 6 8th notes per measure and  4 / 4 specifieds that there are 4 quarter notes per measure.
+    If specified literally, the first number specifies the beats per measure and the second number is the base beat. So 6 / 8 means that there are 6 8th notes per measure and 4 / 4 specifies that there are 4 quarter notes per measure.
 
 #### tempo:
-The tempo of the piece
+The tempo of the piece.
 This is specified literally:
     <pre>
-    <b>time</b>: 4 = 144
+    <b>tempo</b>: 4 = 144
     </pre>
 Or by a reference from an accompaniment:
     <pre>
-    <b>key</b>: accompaniment_ref_Name
+    <b>tempo</b>: accompaniment_ref_Name
     </pre>
 If specified literally, the first number specifies the base beat and the second number specifies the base beats per minute. So 4 = 144 means that there are 144 quarter notes per minute, and 2 = 60 means that there are 60 half notes per minute.
 
@@ -159,15 +159,15 @@ If specified literally, the first number specifies the base beat and the second 
 The base octave
 This is specified literally:
     <pre>
-    <b>time</b>: 4
+    <b>octave</b>: 4
     </pre>
 Or by a reference from an accompaniment:
     <pre>
-    <b>key</b>: accompaniment_ref_Name
+    <b>octave</b>: accompaniment_ref_Name
     </pre>
 If specified literally, this is the default octave for each note specified in patterns and in the main music sheet.
 Knowing this, be careful with the octaves of each written note. _C_ is the lowest note in all octaves; therefore, all notes specified in the piece will
-be higher than the _C_of the same octave by default.
+be higher than the _C_ of the same octave by default.
 
 This means that an A minor scale
 <pre>
